@@ -29,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
             switch (pos) {
 
                 case 0:
-                    return FirstFragment.newInstance("FirstFragment, Instance 1");
+                    return MainFragment.newInstance("This is the main fragment");
                 case 1:
-                    return SecondFragment.newInstance("SecondFragment, Instance 1");
+                    return CameraFragment.newInstance("This is the camera fragment");
                 default:
-                    return FirstFragment.newInstance("ThirdFragment, Default");
+                    return MainFragment.newInstance("This is the main fragment");
             }
         }
 
         @Override
         public int getCount() {
-            return 5;
+            return 2;
         }
     }
 }
