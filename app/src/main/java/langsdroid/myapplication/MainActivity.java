@@ -14,47 +14,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
-        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
-        vpPager.setAdapter(adapterViewPager);
+        ViewPager pager = (ViewPager) findViewById(R.id.main_activity_viewpager);
+        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
     }
 
+    private class MyPagerAdapter extends FragmentPagerAdapter {
 
-    public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 3;
-
-        public MyPagerAdapter(FragmentManager fragmentManager) {
-            super(fragmentManager);
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
 
-        // Returns total number of pages
         @Override
-        public int getCount() {
-            return NUM_ITEMS;
-        }
+        public Fragment getItem(int pos) {
+            switch (pos) {
 
-        // Returns the fragment to display for that page
-        @Override
-        public Fragment getItem(int position) {
-            switch (position) {
-                case 0: // Fragment # 0 - This will show FirstFragment
-                    return FirstFragment.newInstance(0, "Page # 1");
-                case 1: // Fragment # 0 - This will show FirstFragment different title
-                    return FirstFragment.newInstance(1, "Page # 2");
-                case 2: // Fragment # 1 - This will show SecondFragment
-                    return SecondFragment.newInstance(2, "Page # 3");
+                case 0:
+                    return FirstFragment.newInstance("FirstFragment, Instance 1");
+                case 1:
+                    return SecondFragment.newInstance("SecondFragment, Instance 1");
                 default:
-                    return null;
+                    return FirstFragment.newInstance("ThirdFragment, Default");
             }
         }
 
-        // Returns the page title for the top indicator
         @Override
-        public CharSequence getPageTitle(int position) {
-            return "Page " + position;
+        public int getCount() {
+            return 5;
         }
-
     }
-
-
 }
