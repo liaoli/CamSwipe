@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:src="@drawable/samplePhoto" />
+            android:src="@drawable/sample_photo" />
 
     </LinearLayout>
 
