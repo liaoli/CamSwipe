@@ -4,6 +4,10 @@
 <h3>GIF</h3>
 
 ![alt tag](https://github.com/langsmith/CamSwipe/blob/master/camswipeicon.png?raw=true)
+
+![alt tag](https://github.com/langsmith/CamSwipe/blob/master/CamSwipe-GIF.gif?raw=true)
+
+
 </br>
 
 <h3>Overview</h3>
