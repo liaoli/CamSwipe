@@ -14,6 +14,13 @@
         android:id="@+id/camera_shutter_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fabSize="normal" />
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginRight="@dimen/fab_margin_right"
+        android:src="@drawable/ic_photo_camera_white_48dp"
+        app:elevation="3dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="6dp"
+        app:rippleColor="@android:color/holo_red_dark" />
 
 </FrameLayout>

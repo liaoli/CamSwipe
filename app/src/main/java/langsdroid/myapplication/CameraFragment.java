@@ -31,6 +31,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -71,6 +72,7 @@ public class CameraFragment extends Fragment {
     private Handler backgroundHandler;
     private HandlerThread backgroundThread;
     private TextureView textureView;
+    private ImageButton takePictureButton;
 
 
     @Override
@@ -80,6 +82,14 @@ public class CameraFragment extends Fragment {
         textureView = (TextureView) view.findViewById(R.id.camera_preview_textureview);
         assert textureView != null;
         textureView.setSurfaceTextureListener(textureListener);
+        takePictureButton = (ImageButton) view.findViewById(R.id.camera_shutter_button);
+        assert takePictureButton != null;
+        takePictureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePicture();
+            }
+        });
 
         return view;
     }
